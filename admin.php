@@ -26,7 +26,7 @@ if (isset($_POST['add_hotel']) && $rola == 'admin') {
 // 2. Zmiana Statusu Rezerwacji
 if (isset($_POST['zmien_status'])) {
     try {
-        // [ Trigger w bazie sam zaktualizuje płatności i logi
+        // Trigger w bazie sam zaktualizuje płatności i logi
         $conn->prepare("UPDATE rezerwacje SET status=? WHERE id_rezerwacji=?")->execute([$_POST['st'], $_POST['rid']]);
         
         // Opcjonalne czyszczenie płatności przy zwykłym anulowaniu

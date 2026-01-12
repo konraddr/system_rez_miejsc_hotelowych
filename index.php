@@ -51,11 +51,12 @@ if(!empty($pokoje_ids)) {
     <style>
         /* Stylizacja zajętych i wolnych dat */
         .flatpickr-day.disabled { 
-            background: #ffcccc !important; 
+            background: #ff0000 !important; 
             color: #990000 !important; 
-            border-color: #ffcccc !important; 
+            border-color: #cc0000 !important; 
         }
-        .flatpickr-day { background: #e6fffa; } /* Domyślnie zielonkawe (wolne) */
+        .flatpickr-day { background: #05a100; } 
+        /* Domyślnie zielony */
         .flatpickr-day.selected { background: #003580 !important; border-color: #003580 !important; }
         
         /* Ukrywamy standardowy kalendarz przeglądarki dla pewności */
@@ -122,7 +123,7 @@ if(!empty($pokoje_ids)) {
                         <button name="start" class="btn" style="flex:1">Rezerwuj</button>
                     </div>
                 </form>
-                <a href="terminy.php?pid=<?php echo $row['id_pokoj']; ?>" class="btn btn-gray btn-small" style="display:block; text-align:center; margin-top:5px;">📅 Pełny Grafik</a>
+                <a href="terminy.php?pid=<?php echo $row['id_pokoj']; ?>" class="btn btn-gray btn-small" style="display:block; text-align:center; margin-top:5px;"> Pełny Grafik</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -141,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             locale: "pl", 
             minDate: "today", 
             dateFormat: "Y-m-d", 
-            disable: blockedDates, // Tu przekazujemy zajęte terminy (będą czerwone dzięki CSS wyżej)
+            disable: blockedDates, // Tu przekazujemy zajęte terminy
             onChange: function(selectedDates, dateStr, instance) {
                 // Automatyczne ustawienie daty "Do" na dzień po dacie "Od"
                 if(input.name === 'od') {
@@ -150,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(doInput && doInput._flatpickr) {
                         doInput._flatpickr.set('minDate', dateStr);
                         // Opcjonalnie: otwórz od razu kalendarz "Do"
-                        // doInput._flatpickr.open(); 
+                        doInput._flatpickr.open(); 
                     }
                 }
             }

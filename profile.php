@@ -106,7 +106,7 @@ $u = $conn->query("SELECT * FROM uzytkownik WHERE id_uzytkownika=".$uid)->fetch(
                 while($r=$res->fetch()){
                     $cena = $r['cena_ostateczna'];
                     
-                    // [ZMIANA] Kolorowanie statusów
+                    // Kolorowanie statusów
                     $stat_html = "<b>{$r['status']}</b>";
                     if($r['status'] == 'potwierdzona') $stat_html = "<span style='color:#d35400'>POTWIERDZONA<br><small>(Czeka na wpłatę/przyjazd)</small></span>";
                     if($r['status'] == 'oplacona') $stat_html = "<span style='color:green'>OPŁACONA </span>";
@@ -123,7 +123,7 @@ $u = $conn->query("SELECT * FROM uzytkownik WHERE id_uzytkownika=".$uid)->fetch(
                         <td>
                             <div style='display:flex; gap:5px; flex-direction:column;'>";
                             
-                    // [ZMIANA] OPCJA A: Przycisk Zapłać (Tylko jeśli potwierdzona)
+                    // OPCJA A: Przycisk Zapłać (Tylko jeśli potwierdzona)
                     if($r['status'] == 'potwierdzona') {
                         echo "<form method='POST'>
                                 <input type='hidden' name='rid' value='{$r['id_rezerwacji']}'>
@@ -131,7 +131,7 @@ $u = $conn->query("SELECT * FROM uzytkownik WHERE id_uzytkownika=".$uid)->fetch(
                               </form>";
                     }
 
-                    // [ZMIANA] Przycisk Anuluj (Blokada dla zrealizowanych/anulowanych)
+                    // Przycisk Anuluj (Blokada dla zrealizowanych/anulowanych)
                     if(in_array($r['status'], ['potwierdzona','oczekujaca','oplacona'])) {
                         echo "<form method='POST' onsubmit='return confirm(\"Czy na pewno anulować?\")'>
                                 <input type='hidden' name='rid' value='{$r['id_rezerwacji']}'>

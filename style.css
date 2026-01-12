@@ -1,30 +1,109 @@
-body { font-family: 'Segoe UI', sans-serif; padding: 20px; background: #f4f7f6; color: #333; }
-.nav { background: #003580; color: white; padding: 15px; margin-bottom: 20px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
-.nav a { color: white; text-decoration: none; margin-left: 15px; font-weight: bold; }
-.box { background: white; padding: 25px; border: 1px solid #ddd; max-width: 900px; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; }
-table { width: 100%; border-collapse: collapse; background: white; margin-top: 10px; }
-th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-th { background: #e9ecef; }
-.btn { background: #003580; color: white; padding: 8px 15px; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; }
-.btn-red { background: #dc3545; } .btn-green { background: #28a745; }
-input, select { padding: 10px; width: 100%; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-.msg { padding: 15px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; margin-bottom: 15px; }
-/* Fragment z pliku style.css */
-.search-bar { 
-    background: #003580; 
-    padding: 20px; 
-    border-radius: 8px; 
-    display: flex; 
-    gap: 10px; 
-    flex-wrap: wrap; 
-    align-items: flex-end; 
-    margin-bottom: 20px; 
-}
-.search-bar label { 
-    color: white; 
-    margin: 0 0 2px 0; 
-}
-.search-bar input, .search-bar select { 
-    margin: 0; 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    background: #f4f7f6;
+    color: #333;
 }
 
+.nav {
+    background: #003580;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #e9ecef;
+}
+
+.btn {
+    background: #003580;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: #dc3545;
+}
+
+.btn-green {
+    background: #28a745;
+}
+
+input,
+select {
+    padding: 10px;
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.msg {
+    padding: 15px;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    background: #003580;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.search-bar label {
+    color: white;
+    margin: 0 0 2px 0;
+}
+
+.search-bar input,
+.search-bar select {
+    margin: 0;
+}

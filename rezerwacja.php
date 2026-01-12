@@ -17,14 +17,14 @@ if($d) {
 // 2. FINALIZACJA REZERWACJI
 if(isset($_POST['final']) && $d){
     try {
-        // [ZMIANA] Przekazujemy liczbę dorosłych (:adults) do bazy
+        // Przekazujemy liczbę dorosłych (:adults) do bazy
         $stmt = $conn->prepare("SELECT dokonaj_rezerwacji(:uid, :pid, :od, :do, :adults, :kids)");
         $stmt->execute([
             ':uid' => $_SESSION['uid'], 
             ':pid' => $d['pid'], 
             ':od' => $d['od'], 
             ':do' => $d['do'], 
-            ':adults' => $d['dorosli'], // Tu przekazujemy wartość z formularza
+            ':adults' => $d['dorosli'], //  przekazujemy wartość z formularza
             ':kids' => $d['dzieci']
         ]);
         $msg = $stmt->fetchColumn();
@@ -36,7 +36,7 @@ if(isset($_POST['final']) && $d){
         }
         
     } catch(Exception $e) { 
-        // [ZMIANA] Obsługa błędów triggerów (np. BLOKADA KONTA)
+        // Obsługa błędów triggerów (np. BLOKADA KONTA)
         $rawError = $e->getMessage();
         if (strpos($rawError, 'BLOKADA') !== false) {
             $msg = "NIE MOŻNA ZAREZERWOWAĆ: Twoje konto jest zablokowane!";
